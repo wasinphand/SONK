@@ -12,6 +12,12 @@ class _MainScreenState extends State<MainScreen> {
   TextEditingController _textController;
   int _currentIndex = 0;
 
+  void handlePage(){
+    if(this._currentIndex==0){
+      Navigator.pushNamed(context, 'Profile');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +72,7 @@ class _MainScreenState extends State<MainScreen> {
           setState(() {
             _currentIndex = index;
           });
+          handlePage();
         },
         items: allIcons.map((Detail detail) {
           return BottomNavigationBarItem(
